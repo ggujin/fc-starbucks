@@ -17,14 +17,15 @@ a {
 
 /* HEADER */
 header {
-  background-color: royalblue;
+  background-color: #f6f5f0;
+  border-bottom: 1px solid #c8c8c8;
 }
 header .inner {
   /* margin 0과 auto를 통해 가운데 정렬 */
   width: 1100px;
   height: 120px;
   margin: 0 auto;
-  background-color: orange;
+  /* background-color: orange; */
   position: relative;
 }
 header .logo {
@@ -36,9 +37,13 @@ header .logo {
   left: 0;
   margin: auto;
   /* 임시로 사라지게. */
-  display: none;
+  /* display: none; */
 }
 header .sub-menu {
+  position: absolute;
+  /* 오른쪽에 붙여주자 */
+  top: 10px;
+  right: 0;
   display: flex;
 }
 header .sub-menu ul.menu {
@@ -103,4 +108,10 @@ header .sub-menu .search .material-icons {
   bottom: 0;
   right: 5px;
   margin: auto;
+  /* 자연스럽게 */
+  transition: .4s;
+}
+/* .search.focused < 는 일치선택자이어야 함. focused는 붙고 빠지니까..  */
+header .sub-menu .search.focused .material-icons { 
+  opacity: 0;
 }
