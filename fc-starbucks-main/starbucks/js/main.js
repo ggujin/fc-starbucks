@@ -45,3 +45,41 @@ window.addEventListener('scroll', _.throttle(function () {
   }
 }, 300));
 // _.throttle(사용하고자하는 함수, 시간추가ms단위로)
+
+
+// 순차적 애니메이션
+const fadeEls = document.querySelectorAll('.visual .fade-in');
+fadeEls.forEach(function (fadeEl, index) {
+  // gsap.to(요소, 지속시간(s단위), 옵션);
+  gsap.to(fadeEl, 1, {
+    delay: (index + 1) * .7,
+    opacity: 1
+  });
+});
+
+
+// 수직 슬라이드 Swiper
+ // 실행.. new-> 생성자, 클래스 // new Swiper(선택자, 옵션)
+new Swiper('.notice-line .swiper-container', { // 인수,,와 옵션을 {} 객체데이터 형식으로
+  direction: 'vertical',
+  autoplay: true,
+  loop: true
+});
+new Swiper('.promotion .swiper-container', {
+  // direction: 'horizontal', 기본값 이므로 따로 명시할 필요 없음
+  slidesPerView: 3, // 한번에 보여줄 슬라이드 개수
+  sapceBetween: 10, // 슬라이드 사이 여백
+  centeredSlides: true, // 1번 슬라이드가 가운데 보이기
+  loop: true, // 얘 안넣어주면 처음 부분과 마지막부분 비어있음
+  autoplay: {
+    delay: 5000 // 5초
+  },
+  pagination: {
+    el: '.promotion .swiper-pagination', // 페이지 번호 요소 선택자
+    clickable: true // 사용자의 페이지 번호요소 제어 가능 여부
+  },
+  navigation: {
+    prevEl: '.promotion .swiper-prev', // 이전 버튼
+    nextEl: '.promotion .swiper-next'  // 다음 버튼
+  }
+});
