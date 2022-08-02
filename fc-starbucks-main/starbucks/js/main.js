@@ -65,6 +65,7 @@ new Swiper('.notice-line .swiper-container', { // 인수,,와 옵션을 {} 객�
   autoplay: true,
   loop: true
 });
+
 new Swiper('.promotion .swiper-container', {
   // direction: 'horizontal', 기본값 이므로 따로 명시할 필요 없음
   slidesPerView: 3, // 한번에 보여줄 슬라이드 개수
@@ -81,5 +82,22 @@ new Swiper('.promotion .swiper-container', {
   navigation: {
     prevEl: '.promotion .swiper-prev', // 이전 버튼
     nextEl: '.promotion .swiper-next'  // 다음 버튼
+  }
+});
+
+
+// 요소 슬라이드 - 슬라이드 영역 토글 toggle-promotion
+const promotionEl = document.querySelector('.promotion');
+const promotionToggleBtn = document.querySelector('.toggle-promotion');
+let isHidePromotion = false; // ture로 재할당 가능 // 안숨겨져있다. 보이고있다. 
+promotionToggleBtn.addEventListener('click', function () { 
+  // 토글버튼을 클릭하면 보여주거나 숨겨주는 로직, 지속적으로 반대값으로 반환하는 로직
+  isHidePromotion = !isHidePromotion;
+  if (isHidePromotion) {
+    // ture 숨김 처리!
+    promotionEl.classList.add('hide'); // 프로모션 슬라이드 만든 부분에 요소를 안보이게 hide처리
+  } else {
+    // 아니면, 보임 처리!
+    promotionEl.classList.remove('hide');
   }
 });

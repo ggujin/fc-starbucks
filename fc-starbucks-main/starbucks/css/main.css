@@ -426,6 +426,11 @@ header .badges .badge {
   height: 693px;
   background-color: #f6f5ef;
   position: relative;
+  transition: height .4s;
+  overflow: hidden;
+}
+.notice .promotion.hide { /* 일치 선택자 이기 때문에 hide띄어쓰기 안함  */
+  height: 0;
 }
 .notice .promotion .swiper-container {
   width: calc(819px * 3 + 20px);
@@ -454,4 +459,57 @@ header .badges .badge {
   left: 0;
   right: 0;
   margin: auto;
+}
+.notice .promotion .swiper-pagination {
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  /* bottom: 40px;
+  left: 0;
+  right: 0; 나는 없어도 위치 잘..?  */
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet {
+  background-color: transparent; /* 넣어줘야 아래 b-i먹음 */
+  background-image: url("../images/promotion_slide_pager.png");
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    outline: none; /* 포커스, 파란색 테두리 사용 안하겠따. */
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet:last-child { /* 마지막 동그라미 */
+  /* 마지막 동그라미는 여백이 필요없음 */
+  margin-right: 0;
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet-active {
+  background-image: url("../images/promotion_slide_pager_on.png");
+}
+.notice .promotion .swiper-prev,
+.notice .promotion .swiper-next {
+  width: 42px;
+  height: 42px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 300px;
+  z-index: 1;
+  cursor: pointer;
+  outline: none;
+  /* 수평(justify-content), 수직 가운데(align-items) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .4s;
+}
+.notice .promotion .swiper-prev {
+  left: 50%;
+  margin-left: -480px;
+}
+.notice .promotion .swiper-next {
+  right: 50%;
+  margin-right: -480px;
+}
+.notice .promotion .swiper-prev:hover,
+.notice .promotion .swiper-next:hover { /* 버튼 마우스 댓을 때 */
+  background-color: #333;
+  color: #fff;
 }
