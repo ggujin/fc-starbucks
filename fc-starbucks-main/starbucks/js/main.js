@@ -101,3 +101,31 @@ promotionToggleBtn.addEventListener('click', function () {
     promotionEl.classList.remove('hide');
   }
 });
+
+
+// 유튜브 영상배경 - 반복애니메이션
+
+// 범위 랜덤 함수(소수점 2자리까지)
+function random(min, max) {
+  // `.toFixed()`를 통해 반환된 문자 데이터를,
+  // `parseFloat()`을 통해 소수점을 가지는 숫자 데이터로 변환
+  return parseFloat((Math.random() * (max - min) + min).toFixed(2))
+}
+function floatingObject(selector, delay, size) {
+  // gsap.to(요소, 지속시간(초단위), 옵션);
+  // gsap.to(selector, 1, {
+  gsap.to(
+    selector, // 선택자
+    random(1.5, 2.5), // 애니메이션 동작 시간(초)
+    { // 옵션
+      y: size,
+      repeat: -1, // 무한반복, javascript라이브러리에서 지원하는.. -1
+      yoyo: true,
+      ease: Power1.easeInOut,
+      delay: random(0, 1.5)//초
+    }
+  );
+}
+floatingObject('.floating1', 1, 15); // (애니메이션처리할 요소, 딜레이(초단위), 위아래움직이는범위(px))
+floatingObject('.floating2', .5, 15);
+floatingObject('.floating3', 1.5, 20);
