@@ -65,7 +65,6 @@ new Swiper('.notice-line .swiper-container', { // 인수,,와 옵션을 {} 객�
   autoplay: true,
   loop: true
 });
-
 new Swiper('.promotion .swiper-container', {
   // direction: 'horizontal', 기본값 이므로 따로 명시할 필요 없음
   slidesPerView: 3, // 한번에 보여줄 슬라이드 개수
@@ -82,6 +81,19 @@ new Swiper('.promotion .swiper-container', {
   navigation: {
     prevEl: '.promotion .swiper-prev', // 이전 버튼
     nextEl: '.promotion .swiper-next'  // 다음 버튼
+  }
+});
+// 다중 요소 슬라이드
+new Swiper('.awards .swiper-container', {
+  // direction: 'horizontal', // 수평 슬라이드
+  autoplay: true, // 자동 재생 여부
+  loop: true, // 반복 재생 여부
+  spaceBetween: 30, // 슬라이드 사이 여백
+  slidesPerView: 5, // 한 번에 보여줄 슬라이드 개수
+  // slidesPerGroup: 5, // 한 번에 슬라이드 할 개수(전체 개수로 나뉘어야 함)
+  navigation: {
+    prevEl: '.awards .swiper-prev',
+    nextEl: '.awards .swiper-next'
   }
 });
 
@@ -129,3 +141,18 @@ function floatingObject(selector, delay, size) {
 floatingObject('.floating1', 1, 15); // (애니메이션처리할 요소, 딜레이(초단위), 위아래움직이는범위(px))
 floatingObject('.floating2', .5, 15);
 floatingObject('.floating3', 1.5, 20);
+
+
+// FIND THE STORE
+const spyEls = document.querySelectorAll('section.scroll-spy');
+spyEls.forEach(function (spyEl) { // 감시하려는 요소들에 
+  new ScrollMagic
+    .Scene({ // 감시하는 라이브러리의 옵션을 추가
+      triggerElement: spyEl, // 보여짐 여부를 감시할, section.scroll-spy붙어있는 요소들 중 하나를 할당.
+      triggerHook: .8 // 뷰포트 0~1, 0.8쯤에 보여짐 여부 감시할 요소가 걸리면 트리거 실행
+    })
+    .setClassToggle(spyEl, 'show') // 넣었다뺏다제어(클래스를 토글할 요소지정, 토글할 클래스 이름)
+    .addTo(new ScrollMagic.Controller()) // 컨트롤러개념 추가 위한.
+});
+
+
