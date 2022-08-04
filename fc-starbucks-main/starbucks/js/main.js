@@ -19,6 +19,7 @@ searchInputEl.addEventListener('blur', function () {
 });
 
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
 
 //window.. 화면 자체 에 scroll 이벤트를 추가하여 스크롤 되면 익명함수를 실행하겠다.
 // window.addEventListener('scroll', function () { // 핸들러 익명함수 
@@ -35,6 +36,11 @@ window.addEventListener('scroll', _.throttle(function () {
       opacity: 0, // 시각적으로만 없애줌 
       display: 'none'
     });
+    // 버튼 보이기!
+    // gsap.to('#to-top', .2, {
+    gsap.to(toTopEl, .2, {
+      x: 0 // 원래 위치
+    });
   } else {
     // 배지 보여주기 (이하일 때)
     // badgeEl.style.display = 'block';
@@ -42,9 +48,21 @@ window.addEventListener('scroll', _.throttle(function () {
       opacity: 1,
       display: 'block'
     });
+    // 버튼 숨기기! 요소말고 선택자만 넣어줘도 찾을 수 있음.
+    // gsap.to('#to-top', .2, {
+    gsap.to(toTopEl, .2, {
+      x: 100 // 오른쪽으로 100px 이동
+    });
   }
 }, 300));
 // _.throttle(사용하고자하는 함수, 시간추가ms단위로)
+
+// const toTopEl = document.querySelector('#to-top'); 같이 쓰게 위로 올려둠 
+toTopEl.addEventListener('click', function () { // 이벤트 핸들러
+  gsap.to(window, .7, { // 화면자체, 창, 라이브러리가 화면 자체를 애니메이션 처리를 하며 특정 위치로 옮겨주기
+    scrollTo: 0 // 이옵션 쓰려고 ScrollToPlugin 가져옴
+  }); 
+})
 
 
 // 순차적 애니메이션
