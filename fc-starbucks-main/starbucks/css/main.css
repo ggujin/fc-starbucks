@@ -866,3 +866,83 @@ header .badges .badge {
   background-color: #fff;
   color: #333;
 }
+
+
+/* FOOTER */
+footer {
+  background-color: #272727;
+  border-top: 1px solid #333;
+}
+footer .inner {
+  padding: 40px 0 60px 0;
+}
+footer .menu {
+  display: flex;
+  justify-content: center;
+
+}
+footer .menu li {
+  position: relative; /* before의 부모 */
+}
+footer .menu li::before {
+  /* before는 인라인 요소지만, 포지션 앱솔루트 혹은 픽스드 쓰면 자동으로 블럭,, 가로세로값 가질 수 있음 */
+  content: "";
+  width: 3px;
+  height: 3px;
+  background-color: #555;
+  /* 수직 가운데 배치 */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -1px;
+  margin: auto;
+}
+footer .menu li:last-child::before {
+  display: none;
+}
+footer .menu li a {
+  color: #ccc;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 15px;
+  display: block; /* a요소 클릭할 수 있는 범위를 늘려주기 위해.. padding쓰려면.. */
+}
+footer .menu li a.green {
+  color: #669900;
+}
+footer .btn-group {
+  margin-top: 20px;
+  /* 수평 가운데정렬 */
+  display: flex;
+  justify-content: center;
+}
+footer .btn-group .btn {
+ font-size: 12px;
+ margin-right: 10px;
+}
+footer .btn-group .btn:last-child {
+  margin-right: 0;
+}
+footer .info {
+  margin-top: 30px;
+  /* 문자가운데정렬 */
+  text-align: center;
+}
+footer .info span {
+  margin-right: 20px;
+  color: #999;
+  font-size: 12px;
+}
+footer .info span:last-child {
+  margin-right: 0;
+}
+footer .copyright {
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 12px;
+}
+footer .logo {
+  /* img요소에 전체 display:block지정했으므로 width속성 없이도 가운데 정렬 가능 */
+  margin: 30px auto 0; 
+}
