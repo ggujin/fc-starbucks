@@ -5,7 +5,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: "Nanum Gothic", sans-serif;
   /* height: 3000px; */
 }
 img {
@@ -34,13 +34,14 @@ a {
   box-sizing: border-box; /* 패딩, 보더 들어간만큼 요소 커지지 않도록 */
   /* a태그나 span태그에 버튼클래스를 부여했을때 정상적으로 나오게 */
   display: block;
-  transition: .4s;
+  transition: 0.4s;
 }
 .btn:hover {
   background-color: #333;
   color: #fff;
 }
-.btn.btn--reverse { /* reverse상태일때. 20점, 위에는10점 상태를 정의하면 덮어써짐.*/
+.btn.btn--reverse {
+  /* reverse상태일때. 20점, 위에는10점 상태를 정의하면 덮어써짐.*/
   background-color: #333;
   color: #fff;
 }
@@ -49,41 +50,44 @@ a {
   color: #333;
 }
 .btn.btn--brown {
-  border-color: #592B18;
-  color: #592B18;
+  border-color: #592b18;
+  color: #592b18;
 }
 .btn.btn--brown:hover {
-  background-color: #592B18;
-  color: #FFF;
+  background-color: #592b18;
+  color: #fff;
 }
 .btn.btn--gold {
-  border-color: #D9AA8A;
-  color: #D9AA8A;
+  border-color: #d9aa8a;
+  color: #d9aa8a;
 }
 .btn.btn--gold:hover {
-  background-color: #D9AA8A;
-  color: #FFF;
+  background-color: #d9aa8a;
+  color: #fff;
 }
 .btn.btn--white {
-  border-color: #FFF;
-  color: #FFF;
+  border-color: #fff;
+  color: #fff;
 }
 .btn.btn--white:hover {
-  background-color: #FFF;
+  background-color: #fff;
   color: #333;
 }
 .back-to-position {
   opacity: 0; /* 완전투명 */
   transition: 1s;
 }
-.back-to-position.to-right { /* 왼->오 원래상태로 돌아오는 것을 전제. */
+.back-to-position.to-right {
+  /* 왼->오 원래상태로 돌아오는 것을 전제. */
   transform: translateX(-150px); /* x축(수평)으로 -150px으로이동 */
 }
-.back-to-position.to-left { /* 오->왼 */
+.back-to-position.to-left {
+  /* 오->왼 */
   /* 원래 위치보다 오른쪽에 있을테니 원래상태로 돌아온다면 오른쪽에서 왼쪽으로 이동하는 것 처럼 보임 */
   transform: translateX(150px);
 }
-.show .back-to-position { /* show의 후손이면 보이고 원래 위치로 돌아와 */
+.show .back-to-position {
+  /* show의 후손이면 보이고 원래 위치로 돌아와 */
   opacity: 1; /* 불투명 보여지게 */
   transform: translateX(0);
 }
@@ -91,15 +95,14 @@ a {
   transition-delay: 0s; /* 명시적 */
 }
 .show .back-to-position.delay-1 {
-  transition-delay: .3s; 
+  transition-delay: 0.3s;
 }
 .show .back-to-position.delay-2 {
-  transition-delay: .6s; 
+  transition-delay: 0.6s;
 }
 .show .back-to-position.delay-3 {
-  transition-delay: .9s; 
+  transition-delay: 0.9s;
 }
-
 
 /* HEADER */
 header {
@@ -189,7 +192,7 @@ header .sub-menu .search input {
   background-color: #fff;
   color: #777;
   font-size: 12px;
-  transition: width .4s;
+  transition: width 0.4s;
 }
 header .sub-menu .search input:focus {
   width: 190px;
@@ -203,10 +206,10 @@ header .sub-menu .search .material-icons {
   right: 5px;
   margin: auto;
   /* 자연스럽게 */
-  transition: .4s;
+  transition: 0.4s;
 }
 /* .search.focused < 는 일치선택자이어야 함. focused는 붙고 빠지니까..  */
-header .sub-menu .search.focused .material-icons { 
+header .sub-menu .search.focused .material-icons {
   opacity: 0;
 }
 header .main-menu {
@@ -219,7 +222,6 @@ header .main-menu {
   display: flex;
 }
 header .main-menu .item {
-
 }
 header .main-menu .item .item__name {
   padding: 10px 20px 34px 20px;
@@ -267,7 +269,7 @@ header .main-menu .item .item__contents .contents__menu > ul > li ul li {
   cursor: pointer;
 }
 header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover {
-  color: #669900
+  color: #669900;
 }
 header .main-menu .item .item__contents .contents__texture {
   padding: 26px 0;
@@ -296,10 +298,9 @@ header .badges .badge {
   overflow: hidden;
   margin-bottom: 12px;
   /* 그림자 */
-  box-shadow: 4px 4px 10px rgba(0,0,0,.15);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
   cursor: pointer;
 }
-
 
 /* VISUAL */
 .visual {
@@ -348,13 +349,11 @@ header .badges .badge {
 .visual .spoon {
   position: absolute;
   bottom: 0;
-  left: 275px;  
+  left: 275px;
 }
-
 
 /* NOTICE */
 .notice {
-
 }
 .notice .notice-line {
   position: relative;
@@ -390,6 +389,7 @@ header .badges .badge {
   display: flex;
   /* 수직 */
   align-items: center;
+  overflow: hidden;
 }
 .notice .notice-line .inner .inner__left h2 {
   color: #fff;
@@ -454,10 +454,11 @@ header .badges .badge {
   height: 693px;
   background-color: #f6f5ef;
   position: relative;
-  transition: height .4s;
+  transition: height 0.4s;
   overflow: hidden;
 }
-.notice .promotion.hide { /* 일치 선택자 이기 때문에 hide띄어쓰기 안함  */
+.notice .promotion.hide {
+  /* 일치 선택자 이기 때문에 hide띄어쓰기 안함  */
   height: 0;
 }
 .notice .promotion .swiper-container {
@@ -474,11 +475,12 @@ header .badges .badge {
   margin-left: calc((819px * 3 + 20px) / -2);
 }
 .notice .promotion .swiper-slide {
-  opacity: .5;
+  opacity: 0.5;
   transition: opacity 1s;
   position: relative;
 }
-.notice .promotion .swiper-slide-active { /* 정가운데만 불투명하게 보이는 */
+.notice .promotion .swiper-slide-active {
+  /* 정가운데만 불투명하게 보이는 */
   opacity: 1;
 }
 .notice .promotion .swiper-slide .btn {
@@ -499,12 +501,13 @@ header .badges .badge {
 .notice .promotion .swiper-pagination .swiper-pagination-bullet {
   background-color: transparent; /* 넣어줘야 아래 b-i먹음 */
   background-image: url("../images/promotion_slide_pager.png");
-    width: 12px;
-    height: 12px;
-    margin-right: 6px;
-    outline: none; /* 포커스, 파란색 테두리 사용 안하겠따. */
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  outline: none; /* 포커스, 파란색 테두리 사용 안하겠따. */
 }
-.notice .promotion .swiper-pagination .swiper-pagination-bullet:last-child { /* 마지막 동그라미 */
+.notice .promotion .swiper-pagination .swiper-pagination-bullet:last-child {
+  /* 마지막 동그라미 */
   /* 마지막 동그라미는 여백이 필요없음 */
   margin-right: 0;
 }
@@ -526,7 +529,7 @@ header .badges .badge {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: .4s;
+  transition: 0.4s;
 }
 .notice .promotion .swiper-prev {
   left: 50%;
@@ -537,11 +540,11 @@ header .badges .badge {
   margin-right: -480px;
 }
 .notice .promotion .swiper-prev:hover,
-.notice .promotion .swiper-next:hover { /* 버튼 마우스 댓을 때 */
+.notice .promotion .swiper-next:hover {
+  /* 버튼 마우스 댓을 때 */
   background-color: #333;
   color: #fff;
 }
-
 
 /* REWARDS */
 .rewards {
@@ -565,7 +568,7 @@ header .badges .badge {
 }
 .rewards .inner {
   background-image: url("../images/rewards.jpg");
-  height: 241px; 
+  height: 241px;
 }
 .rewards .btn-group {
   position: absolute; /* 부모 inner..의 전역속성에 position값있음 */
@@ -578,14 +581,13 @@ header .badges .badge {
 .rewards .btn-group .btn.sign-up {
   margin-right: 10px;
 }
-.rewards .btn-group .btn.sign-in{
+.rewards .btn-group .btn.sign-in {
   width: 110px;
 }
 .rewards .btn-group .btn.gift {
   margin-top: 10px;
   flex-grow: 1; /* display flex내부에서 최대 너비 사용 비율 */
 }
-
 
 /* YOUTUBE VIDEO */
 .youtube {
@@ -602,18 +604,22 @@ header .badges .badge {
   left: 50%;
   margin-left: calc(1920px / -2);
   top: 50%;
-  margin-top: calc(1920px * 9 / 16 / -2); /* 가로너비기준 16:9비율, 세로너비의 절반을 끌어올리도록 */
+  margin-top: calc(
+    1920px * 9 / 16 / -2
+  ); /* 가로너비기준 16:9비율, 세로너비의 절반을 끌어올리도록 */
 }
-.youtube .youtube__area::before { /* 스타일을 위한 클래스를 만들지 않고 가상의 요소를 만들어서  */
+.youtube .youtube__area::before {
+  /* 스타일을 위한 클래스를 만들지 않고 가상의 요소를 만들어서  */
   content: "";
   display: block;
   width: 100%;
   height: 0;
   padding-top: 56.25%; /* 16:9비율의 높이지정 안해줘도 만들어짐 */
 }
-.youtube .youtube__cover { /* 배경영상이기때문에 커버덮어주기 */
+.youtube .youtube__cover {
+  /* 배경영상이기때문에 커버덮어주기 */
   background-image: url("../images/video_cover_pattern.png");
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   top: 0;
   left: 0;
@@ -648,7 +654,6 @@ header .badges .badge {
   아래 .season-product .floating3 로 적용.
 } */
 
-
 /* SEASON PRODUCT */
 .season-product {
   background-image: url("../images/season_product_bg.jpg");
@@ -673,9 +678,7 @@ header .badges .badge {
   margin-bottom: 15px;
 }
 .season-product .text-group .more {
-  
 }
-
 
 /* RESERVE COFFEE */
 .reserve-coffee {
@@ -699,7 +702,6 @@ header .badges .badge {
   top: 0;
   right: 0;
 }
-
 
 /* PICK YOUR FAVORITE */
 .pick-your-favorite {
@@ -726,7 +728,6 @@ header .badges .badge {
 .pick-your-favorite .text-group .description {
   margin-bottom: 40px;
 }
-
 
 /* RESERVE STORE */
 .reserve-store {
@@ -799,7 +800,7 @@ header .badges .badge {
 .find-store .picture {
   position: absolute;
   border-radius: 50%;
-  box-shadow: 2px 2px 8px rgba(0,0,0,.5);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 .find-store .picture1 {
   /* position: absolute; 공통 */
@@ -823,7 +824,6 @@ header .badges .badge {
   margin-bottom: 20px;
 }
 
-
 /* AWARDS */
 .awards {
   background-color: #272727;
@@ -840,16 +840,16 @@ header .badges .badge {
 .awards .swiper-next {
   width: 42px;
   height: 42px;
-  border:  2px solid #fff;
+  border: 2px solid #fff;
   border-radius: 50%;
   outline: none;
   color: #fff;
-  opacity: .3;
+  opacity: 0.3;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-   /* 부모요소기준으로 가운데배치 너비값 필수. 수직이니까 세로너비 필수. */
+  /* 부모요소기준으로 가운데배치 너비값 필수. 수직이니까 세로너비 필수. */
   position: absolute;
   top: 0;
   bottom: 0;
@@ -867,7 +867,6 @@ header .badges .badge {
   color: #333;
 }
 
-
 /* FOOTER */
 footer {
   background-color: #272727;
@@ -879,7 +878,6 @@ footer .inner {
 footer .menu {
   display: flex;
   justify-content: center;
-
 }
 footer .menu li {
   position: relative; /* before의 부모 */
@@ -917,8 +915,8 @@ footer .btn-group {
   justify-content: center;
 }
 footer .btn-group .btn {
- font-size: 12px;
- margin-right: 10px;
+  font-size: 12px;
+  margin-right: 10px;
 }
 footer .btn-group .btn:last-child {
   margin-right: 0;
@@ -944,9 +942,8 @@ footer .copyright {
 }
 footer .logo {
   /* img요소에 전체 display:block지정했으므로 width속성 없이도 가운데 정렬 가능 */
-  margin: 30px auto 0; 
+  margin: 30px auto 0;
 }
-
 
 #to-top {
   width: 42px;
